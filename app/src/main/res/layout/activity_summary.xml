@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.SummaryActivity">
+
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue">
+
+        <ImageView
+            android:id="@+id/btnBackArrow"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:src="@drawable/ic_leftarrow" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:text="Summary"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp" />
+
+    </Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue">
+
+        <TextView
+            android:id="@+id/txtAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:background="@drawable/shape"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_3sdp"
+            android:text="All"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtWeekly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:background="@drawable/shape"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_3sdp"
+            android:text="Weekly"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtMonthly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:background="@drawable/shape"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_3sdp"
+            android:text="Monthly"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtYearly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:background="@drawable/shape"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_3sdp"
+            android:text="Yearly"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3.8">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:text="Date"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Income"
+            android:textColor="#005200"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Expense"
+            android:textColor="@color/red"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Saving"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RcvList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="@dimen/_1sdp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_5sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Income"
+                android:textStyle="bold"
+                android:textColor="@color/Green"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/txtTotalIncome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="0"
+                android:gravity="center"
+                android:textColor="@color/Green"
+                android:textSize="@dimen/_12ssp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_5sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Expense"
+                android:textStyle="bold"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_12ssp" />
+
+
+            <TextView
+                android:id="@+id/txtTotalExpense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_12ssp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_5sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Total Saving"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+
+            <TextView
+                android:id="@+id/txtTotalSaving"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/Green"
+                android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black" />
+
+</LinearLayout>

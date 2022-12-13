@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".activity.AddCategoryActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0389d1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:elevation="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="Add Category"
+                android:textColor="#FDFDFD"
+                android:textSize="@dimen/_20ssp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtAddCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:elevation="@dimen/_10sdp"
+                android:hint="Add Categroy"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true" />
+
+            <ImageView
+                android:id="@+id/imgClick"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:src="@drawable/ic_correct" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:text="Add Category" />
+
+</LinearLayout>

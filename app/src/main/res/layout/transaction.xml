@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#f4f4f5"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="@dimen/_1sdp"
+            android:weightSum="3.8">
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/txtIncome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text=""
+                android:textColor="#005200"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtExpense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text=""
+                android:textColor="@color/red"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtSaving"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text=""
+                android:textColor="@color/Green"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/black"/>
+    </LinearLayout>
+
+</LinearLayout>

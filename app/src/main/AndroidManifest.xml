@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.incomeexpense">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+       
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.IncomeExpense"
+        tools:targetApi="31">
+        <activity
+            android:name=".activity.TransactionAllAccountsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.PaymentMethodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.BudgetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CategoryChartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SummaryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.RemindersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.PaymentMethodChartActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activity.AddIncomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.RemoveAdsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AllCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AddCategoryActivity"
+            android:exported="false" />
+        <activity android:name=".activity.AccountActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

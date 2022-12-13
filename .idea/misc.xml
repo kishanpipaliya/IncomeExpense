@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/IncomeExpense/app/src/main/res/drawable/ic_arrow_down_sign_to_navigate.xml" value="0.185" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/drawable/ic_bar_graph.xml" value="0.185" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/drawable/ic_bell.xml" value="0.185" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/drawable/ic_budget.xml" value="0.185" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/drawable/ic_category.xml" value="0.185" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/drawable/ic_chart.xml" value="0.185" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/drawable/ic_correct.xml" value="0.185" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/drawable/ic_disabled.xml" value="0.185" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/drawable/ic_graphic.xml" value="0.185" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/drawable/shape.xml" value="0.1825" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/drawable/shapewithstorke.xml" value="0.185" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/activity_add_categort.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/activity_add_category_click.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/activity_add_expense.xml" value="0.21822916666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/activity_add_income.xml" value="0.264" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/activity_all_category.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/activity_budget.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/activity_category.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/activity_category_chart.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/activity_main.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/activity_payment_method.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/activity_reminders.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/activity_remove_ads.xml" value="0.19884083816317433" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/activity_summary.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/activity_transaction_all_accounts.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/add_income_category_cllick.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/custom_item.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/delete.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/fragment_expense.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/fragment_income.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/fragment_reminder_a_l_l.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/fragment_reminder_today.xml" value="0.21822916666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/grid_view.xml" value="0.23125" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/grid_view_item.xml" value="0.23125" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/more_option.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/more_option_view.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/payment.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/payment_category.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/payment_list.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/show_category.xml" value="0.23229166666666667" />
+        <entry key="..\:/IncomeExpense/app/src/main/res/layout/transaction.xml" value="0.23125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

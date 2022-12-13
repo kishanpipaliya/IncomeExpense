@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f5"
+    android:orientation="vertical"
+    tools:context=".activity.PaymentMethodActivity">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue">
+
+        <ImageView
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:src="@drawable/ic_leftarrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:text="Payment Method"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp" />
+
+        <TextView
+            android:id="@+id/btnNew"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:gravity="right"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:textSize="@dimen/_16ssp"
+            android:text="ADD NEW"/>
+
+    </Toolbar>
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/rclPay"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="@dimen/_2sdp"
+            android:padding="@dimen/_10sdp"
+            android:text="Bank"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@color/white"
+            android:elevation="@dimen/_2sdp"
+            android:padding="@dimen/_10sdp"
+            android:text="Card"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_4sdp"
+            android:background="@color/white"
+            android:elevation="@dimen/_2sdp"
+            android:padding="@dimen/_10sdp"
+            android:text="Cash"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="@dimen/_2sdp"
+            android:padding="@dimen/_10sdp"
+            android:text="Other"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/btnNewADD"-->
+<!--            android:layout_marginVertical="@dimen/_4sdp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@color/white"-->
+<!--            android:elevation="@dimen/_2sdp"-->
+<!--            android:padding="@dimen/_10sdp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="@dimen/_14ssp" />-->
+
+
+    </LinearLayout>
+
+</LinearLayout>

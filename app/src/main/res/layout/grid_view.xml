@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/_5sdp">
+
+    <LinearLayout
+        android:id="@+id/BtnCateClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgCateGory"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_10sdp"
+            android:src="@drawable/ic_bike" />
+
+        <TextView
+            android:id="@+id/txtCategoryName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Auto Rickshow"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp" />
+    </LinearLayout>
+</LinearLayout>

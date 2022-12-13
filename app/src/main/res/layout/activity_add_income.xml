@@ -1,0 +1,348 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.AddIncomeActivity">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0389d1"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/btnBackArrow"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_leftarrow" />
+
+        <TextView
+            android:id="@+id/txtAddIncomeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:text="Add Income"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp" />
+
+    </Toolbar>
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="1">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:orientation="vertical">
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_margin="@dimen/_10sdp"
+               android:background="@drawable/shapewithstorke"
+               android:orientation="vertical">
+
+               <TextView
+                   android:id="@+id/entIncome"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="@dimen/_5sdp"
+                   android:layout_marginTop="@dimen/_5sdp"
+                   android:text="Income"
+                   android:textColor="#1BE42E"
+                   android:textSize="@dimen/_15ssp"
+                   android:textStyle="bold" />
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+                   <EditText
+                       android:id="@+id/edtIncome"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_weight="1"
+                       android:maxLength="10"
+                       android:backgroundTint="@color/blue"
+                       android:imeOptions="actionNext"
+                       android:maxLines="1" />
+
+                   <ImageView
+                       android:layout_width="@dimen/_15sdp"
+                       android:layout_height="@dimen/_15sdp"
+                       android:layout_gravity="end|bottom"
+                       android:layout_margin="@dimen/_5sdp"
+                       android:src="@drawable/ic_calculater" />
+               </LinearLayout>
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/btnClickCategory"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginHorizontal="@dimen/_10sdp"
+               android:background="@drawable/shapewithstorke"
+               android:orientation="vertical">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="@dimen/_5sdp"
+                   android:layout_marginTop="@dimen/_5sdp"
+                   android:text="Category"
+                   android:textColor="@color/black"
+                   android:textSize="@dimen/_15ssp"
+                   android:textStyle="bold" />
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginBottom="@dimen/_5sdp">
+
+                   <ImageView
+                       android:id="@+id/imgCate"
+                       android:layout_gravity="center"
+                       android:layout_marginLeft="@dimen/_5sdp"
+                       android:layout_width="@dimen/_20sdp"
+                       android:layout_height="@dimen/_20sdp"
+                       android:src="@drawable/ic_info" />
+
+                   <TextView
+                       android:id="@+id/txtOther"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_gravity="center"
+                       android:layout_marginLeft="@dimen/_10sdp"
+                       android:layout_weight="1"
+                       android:text="Other Income"
+                       android:textColor="@color/black" />
+
+                   <ImageView
+                       android:layout_width="@dimen/_15sdp"
+                       android:layout_height="@dimen/_15sdp"
+                       android:layout_gravity="end|bottom"
+                       android:layout_margin="@dimen/_5sdp"
+                       android:background="@color/blue"
+                       android:backgroundTint="@color/blue"
+                       android:src="@drawable/ic_category" />
+               </LinearLayout>
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/btnPayment"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginHorizontal="@dimen/_10sdp"
+               android:layout_marginTop="@dimen/_10sdp"
+               android:background="@drawable/shapewithstorke"
+               android:orientation="vertical">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginHorizontal="@dimen/_5sdp"
+                   android:layout_marginVertical="@dimen/_10sdp"
+                   android:text="Payment Method"
+                   android:textColor="@color/black"
+                   android:textStyle="bold" />
+
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+                   <TextView
+                       android:id="@+id/txtPayment"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:layout_marginStart="@dimen/_5sdp"
+                       android:layout_weight="1"
+                       android:text="cash"
+                       android:textColor="@color/black" />
+
+                   <ImageView
+                       android:layout_width="@dimen/_14sdp"
+                       android:layout_height="@dimen/_14sdp"
+                       android:layout_gravity="end|right"
+                       android:layout_margin="@dimen/_5sdp"
+                       android:src="@drawable/ic_paymentwallet" />
+               </LinearLayout>
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_margin="@dimen/_10sdp"
+               android:layout_marginTop="@dimen/_5sdp"
+               android:background="@drawable/shapewithstorke"
+               android:orientation="vertical">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="@dimen/_5sdp"
+                   android:layout_marginTop="@dimen/_5sdp"
+                   android:text="Notes"
+                   android:textColor="@color/black"
+                   android:textSize="@dimen/_15ssp"
+                   android:textStyle="bold" />
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+                   <EditText
+                       android:id="@+id/edtNotes"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_weight="1"
+                       android:backgroundTint="@color/blue"
+                       android:hint="[Optional]" />
+
+                   <ImageView
+                       android:layout_width="@dimen/_16sdp"
+                       android:layout_height="@dimen/_16sdp"
+                       android:layout_gravity="end|right|center"
+                       android:layout_margin="@dimen/_5sdp"
+                       android:src="@drawable/ic_note" />
+               </LinearLayout>
+           </LinearLayout>
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginHorizontal="@dimen/_5sdp"
+               android:layout_marginTop="@dimen/_5sdp"
+               android:orientation="horizontal">
+
+               <LinearLayout
+                   android:id="@+id/btnDatePiker"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginHorizontal="@dimen/_5sdp"
+                   android:layout_weight="1.5"
+                   android:background="@drawable/shapewithstorke"
+                   android:gravity="center"
+                   android:padding="@dimen/_5sdp">
+
+
+                   <ImageView
+                       android:id="@+id/imgLeftClick"
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:src="@drawable/leftarrow" />
+
+                   <TextView
+                       android:id="@+id/txtDate"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginLeft="@dimen/_10sdp"
+                       android:text="10-Oct-2022"
+                       android:textColor="@color/black"
+                       android:textSize="@dimen/_14ssp" />
+
+
+                   <ImageView
+                       android:id="@+id/imgRightClick"
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:layout_marginLeft="@dimen/_10sdp"
+                       android:src="@drawable/rightarrow" />
+
+                   <ImageView
+                       android:id="@+id/imgDate"
+                       android:layout_width="@dimen/_19sdp"
+                       android:layout_height="@dimen/_19sdp"
+                       android:layout_marginLeft="@dimen/_8sdp"
+                       android:src="@drawable/ic_date" />
+               </LinearLayout>
+
+               <LinearLayout
+                   android:id="@+id/btnTimePiker"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginHorizontal="@dimen/_5sdp"
+                   android:layout_weight="2"
+                   android:background="@drawable/shapewithstorke"
+                   android:gravity="center"
+                   android:padding="@dimen/_5sdp">
+
+
+                   <TextView
+                       android:id="@+id/txtTime"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginLeft="@dimen/_10sdp"
+                       android:text="10:20 Am"
+                       android:textColor="@color/black"
+                       android:textSize="@dimen/_14ssp" />
+
+
+                   <ImageView
+                       android:id="@+id/imgTime"
+                       android:layout_width="@dimen/_19sdp"
+                       android:layout_height="@dimen/_19sdp"
+                       android:layout_marginHorizontal="@dimen/_5sdp"
+                       android:padding="@dimen/_2sdp"
+                       android:src="@drawable/ic_time" />
+               </LinearLayout>
+           </LinearLayout>
+       </LinearLayout>
+   </ScrollView>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shapewithstorke">
+
+        <TextView
+            android:id="@+id/BtnBottomPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:text="Payment Method"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/black" />
+
+        <TextView
+
+            android:id="@+id/btnBottomCategory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:text="Category"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/blue"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:text="SAVE"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp" />
+    </LinearLayout>
+</LinearLayout>
+

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f4f4f5"
+    tools:context=".activity.AllCategoryActivity">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0389d1"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/btnBackArrow"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_leftarrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:text="Category"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp" />
+
+        <TextView
+            android:id="@+id/BtnAddNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:padding="@dimen/_10sdp"
+            android:text="ADD NEW"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+           android:padding="@dimen/_10sdp"
+            android:text="REPORT"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp" />
+
+
+    </Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f4f4f5"
+            app:tabIconTint="#f4f4f5"
+            app:tabIndicatorColor="@color/black"
+            app:tabIndicatorHeight="@dimen/_2sdp"
+            app:tabTextColor="#0389D1" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:background="#f4f4f5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/btnAdd"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_gravity="end"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_25sdp"
+        android:padding="@dimen/_1sdp"
+        android:src="@drawable/ic_add" />
+</LinearLayout>
