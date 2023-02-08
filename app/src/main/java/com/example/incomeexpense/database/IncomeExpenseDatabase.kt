@@ -99,7 +99,6 @@ class IncomeExpenseDatabase(var context: Context) :
             }
             return modelArray
         } else {
-            Toast.makeText(context, "No data", Toast.LENGTH_SHORT).show()
             return modelArray
         }
     }

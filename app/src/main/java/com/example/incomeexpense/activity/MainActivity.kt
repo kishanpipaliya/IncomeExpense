@@ -13,6 +13,9 @@ import com.example.incomeexpense.R
 import com.example.incomeexpense.adapter.MoreOptionAdapter
 import com.example.incomeexpense.database.IncomeExpenseDatabase
 import com.example.incomeexpense.databinding.ActivityMainBinding
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 
@@ -21,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
     lateinit var RcvList: ListView
+    lateinit var mAdView : AdView
 
 
     var moreImage = arrayOf(
@@ -87,11 +91,20 @@ class MainActivity : AppCompatActivity() {
 
     private fun initView() {
 
+
+        MobileAds.initialize(this) {}
+
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
         val versionName = packageManager.getPackageInfo(packageName, 0).versionName
         val versionCode = packageManager.getPackageInfo(packageName, 0).versionCode
         binding.txtVersion.setText(versionName+versionCode.toString())
 
-        binding.imgMenu.setOnClickListener { binding.drawerLayout.openDrawer(Gravity.LEFT) }
+        binding.imgMenu.setOnClickListener {
+            binding.drawerLayout.openDrawer(Gravity.LEFT)
+        }
 
 
         binding.BtnAddCategory.setOnClickListener {

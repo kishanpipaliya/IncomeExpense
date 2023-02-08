@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context=".activity.AddIncomeActivity">
 
-    <Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#0389d1"
@@ -27,7 +27,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/_15ssp" />
 
-    </Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
    <ScrollView
        android:layout_width="match_parent"
@@ -293,6 +293,16 @@
                        android:src="@drawable/ic_time" />
                </LinearLayout>
            </LinearLayout>
+
+           <com.google.android.gms.ads.AdView
+               xmlns:ads="http://schemas.android.com/apk/res-auto"
+               android:id="@+id/adView"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/_10sdp"
+               ads:adSize="LARGE_BANNER"
+               android:layout_gravity="center"
+               ads:adUnitId="ca-app-pub-3940256099942544/6300978111"/>
        </LinearLayout>
    </ScrollView>
 

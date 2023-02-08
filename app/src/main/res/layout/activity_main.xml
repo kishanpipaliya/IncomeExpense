@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.MainActivity"
-    tools:openDrawer="start">
+    tools:context=".activity.MainActivity">
 
 
     <LinearLayout
@@ -22,7 +21,7 @@
             android:background="#f4f4f5"
             android:orientation="vertical">
 
-            <Toolbar
+            <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/blue"
@@ -57,246 +56,268 @@
                     android:layout_marginRight="@dimen/_5sdp"
                     android:src="@drawable/ic_bell" />
 
-            </Toolbar>
+            </androidx.appcompat.widget.Toolbar>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
-                android:weightSum="2">
-
-                <LinearLayout
-                    android:id="@+id/btnAddIncome"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/_5sdp"
-                    android:layout_weight="1"
-                    android:background="@drawable/shape"
-                    android:backgroundTint="#4cb151"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:paddingVertical="@dimen/_10sdp">
+          <ScrollView
+              android:layout_width="match_parent"
+              android:scrollbars="none"
+              android:layout_height="wrap_content">
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:orientation="vertical"
+                 android:layout_height="wrap_content">
 
 
-                    <ImageView
-                        android:layout_width="@dimen/_35sdp"
-                        android:layout_height="@dimen/_35sdp"
-                        android:src="@drawable/ic_plus_sign" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:text="Add Income"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_15ssp" />
+                 <com.google.android.gms.ads.AdView
+                     xmlns:ads="http://schemas.android.com/apk/res-auto"
+                     android:id="@+id/adView"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     ads:adSize="BANNER"
+                     android:layout_gravity="center"
+                     ads:adUnitId="ca-app-pub-3940256099942544/6300978111"/>
 
-                </LinearLayout>
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_margin="@dimen/_5sdp"
+                     android:weightSum="2">
 
-                <LinearLayout
-                    android:id="@+id/btnAddExpense"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/shape"
-                    android:backgroundTint="#f54336"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:paddingVertical="@dimen/_10sdp">
-
-
-                    <ImageView
-                        android:layout_width="@dimen/_35sdp"
-                        android:layout_height="@dimen/_35sdp"
-                        android:src="@drawable/ic_minus" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:text="Add Expense"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_15ssp" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
-                android:weightSum="2">
-
-                <LinearLayout
-                    android:id="@+id/BtnAddCategory"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/_5sdp"
-                    android:layout_weight="1"
-                    android:background="@drawable/shape"
-                    android:backgroundTint="#fe6e00"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:paddingVertical="@dimen/_10sdp">
+                     <LinearLayout
+                         android:id="@+id/btnAddIncome"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_marginRight="@dimen/_5sdp"
+                         android:layout_weight="1"
+                         android:background="@drawable/shape"
+                         android:backgroundTint="#4cb151"
+                         android:gravity="center"
+                         android:orientation="vertical"
+                         android:paddingVertical="@dimen/_10sdp">
 
 
-                    <ImageView
-                        android:layout_width="@dimen/_35sdp"
-                        android:layout_height="@dimen/_35sdp"
-                        android:src="@drawable/ic_menu" />
+                         <ImageView
+                             android:layout_width="@dimen/_35sdp"
+                             android:layout_height="@dimen/_35sdp"
+                             android:src="@drawable/ic_plus_sign" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:text="Add Category"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_15ssp" />
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="@dimen/_10sdp"
+                             android:text="Add Income"
+                             android:textColor="@color/white"
+                             android:textSize="@dimen/_15ssp" />
 
-                </LinearLayout>
+                     </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/btnCategory"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/shape"
-                    android:backgroundTint="#01b9d4"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:paddingVertical="@dimen/_10sdp">
+                     <LinearLayout
+                         android:id="@+id/btnAddExpense"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_weight="1"
+                         android:background="@drawable/shape"
+                         android:backgroundTint="#f54336"
+                         android:gravity="center"
+                         android:orientation="vertical"
+                         android:paddingVertical="@dimen/_10sdp">
 
 
-                    <ImageView
-                        android:layout_width="@dimen/_35sdp"
-                        android:layout_height="@dimen/_35sdp"
-                        android:src="@drawable/ic_category" />
+                         <ImageView
+                             android:layout_width="@dimen/_35sdp"
+                             android:layout_height="@dimen/_35sdp"
+                             android:src="@drawable/ic_minus" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:text="Category"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_15ssp" />
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="@dimen/_10sdp"
+                             android:text="Add Expense"
+                             android:textColor="@color/white"
+                             android:textSize="@dimen/_15ssp" />
 
-                </LinearLayout>
-            </LinearLayout>
+                     </LinearLayout>
+                 </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/_5sdp"
-                android:orientation="vertical">
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_margin="@dimen/_5sdp"
+                     android:weightSum="2">
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/black" />
+                     <LinearLayout
+                         android:id="@+id/BtnAddCategory"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_marginRight="@dimen/_5sdp"
+                         android:layout_weight="1"
+                         android:background="@drawable/shape"
+                         android:backgroundTint="#fe6e00"
+                         android:gravity="center"
+                         android:orientation="vertical"
+                         android:paddingVertical="@dimen/_10sdp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/black" />
+                         <ImageView
+                             android:layout_width="@dimen/_35sdp"
+                             android:layout_height="@dimen/_35sdp"
+                             android:src="@drawable/ic_menu" />
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="@dimen/_10sdp"
+                             android:text="Add Category"
+                             android:textColor="@color/white"
+                             android:textSize="@dimen/_15ssp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="income"
-                            android:textColor="@color/Green"
-                            android:textSize="@dimen/_12ssp" />
+                     </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/txtTotalIncome"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="0"
-                            android:textColor="@color/Green"
-                            android:textSize="@dimen/_12ssp" />
-                    </LinearLayout>
+                     <LinearLayout
+                         android:id="@+id/btnCategory"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_weight="1"
+                         android:background="@drawable/shape"
+                         android:backgroundTint="#01b9d4"
+                         android:gravity="center"
+                         android:orientation="vertical"
+                         android:paddingVertical="@dimen/_10sdp">
 
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/black" />
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                         <ImageView
+                             android:layout_width="@dimen/_35sdp"
+                             android:layout_height="@dimen/_35sdp"
+                             android:src="@drawable/ic_category" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Expense"
-                            android:textColor="@color/red"
-                            android:textSize="@dimen/_12ssp" />
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="@dimen/_10sdp"
+                             android:text="Category"
+                             android:textColor="@color/white"
+                             android:textSize="@dimen/_15ssp" />
 
-                        <TextView
-                            android:id="@+id/txtTotalExpense"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="0"
-                            android:textColor="@color/red"
-                            android:textSize="@dimen/_12ssp" />
-                    </LinearLayout>
+                     </LinearLayout>
+                 </LinearLayout>
 
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/black" />
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginHorizontal="@dimen/_5sdp"
+                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                     <View
+                         android:layout_width="match_parent"
+                         android:layout_height="1dp"
+                         android:background="@color/black" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Balance"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_12ssp" />
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/txtTotalSaving"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="0"
-                            android:textColor="@color/Green"
-                            android:textSize="@dimen/_12ssp" />
-                    </LinearLayout>
+                         <View
+                             android:layout_width="1dp"
+                             android:layout_height="match_parent"
+                             android:background="@color/black" />
 
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/black" />
-                </LinearLayout>
+                         <LinearLayout
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:gravity="center"
+                             android:orientation="vertical">
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/black" />
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="income"
+                                 android:textColor="@color/Green"
+                                 android:textSize="@dimen/_12ssp" />
 
-            </LinearLayout>
+                             <TextView
+                                 android:id="@+id/txtTotalIncome"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:gravity="center"
+                                 android:text="0"
+                                 android:textColor="@color/Green"
+                                 android:textSize="@dimen/_12ssp" />
+                         </LinearLayout>
+
+                         <View
+                             android:layout_width="1dp"
+                             android:layout_height="match_parent"
+                             android:background="@color/black" />
+
+                         <LinearLayout
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:gravity="center"
+                             android:orientation="vertical">
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="Expense"
+                                 android:textColor="@color/red"
+                                 android:textSize="@dimen/_12ssp" />
+
+                             <TextView
+                                 android:id="@+id/txtTotalExpense"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:gravity="center"
+                                 android:text="0"
+                                 android:textColor="@color/red"
+                                 android:textSize="@dimen/_12ssp" />
+                         </LinearLayout>
+
+                         <View
+                             android:layout_width="1dp"
+                             android:layout_height="match_parent"
+                             android:background="@color/black" />
+
+                         <LinearLayout
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:gravity="center"
+                             android:orientation="vertical">
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="Balance"
+                                 android:textColor="@color/black"
+                                 android:textSize="@dimen/_12ssp" />
+
+                             <TextView
+                                 android:id="@+id/txtTotalSaving"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:gravity="center"
+                                 android:text="0"
+                                 android:textColor="@color/Green"
+                                 android:textSize="@dimen/_12ssp" />
+                         </LinearLayout>
+
+                         <View
+                             android:layout_width="1dp"
+                             android:layout_height="match_parent"
+                             android:background="@color/black" />
+                     </LinearLayout>
+
+                     <View
+                         android:layout_width="match_parent"
+                         android:layout_height="1dp"
+                         android:background="@color/black" />
+
+                 </LinearLayout>
+             </LinearLayout>
+          </ScrollView>
         </LinearLayout>
 
         <LinearLayout
@@ -400,7 +421,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <LinearLayout

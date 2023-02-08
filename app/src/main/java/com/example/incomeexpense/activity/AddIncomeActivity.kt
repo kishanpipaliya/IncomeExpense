@@ -23,6 +23,9 @@ import com.example.incomeexpense.adapter.PaymentTypeAdapter
 import com.example.incomeexpense.database.IncomeExpenseDatabase
 import com.example.incomeexpense.databinding.ActivityAddIncomeBinding
 import com.example.incomeexpense.moelclass.PayListClass
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import java.util.*
 import kotlin.math.max
@@ -38,6 +41,7 @@ class AddIncomeActivity : AppCompatActivity() {
     private val channelId = "i.apps.notifications"
     private val description = "Test notification"
 
+    lateinit var mAdView : AdView
     var maxLength = 9223372036854775807
 
 
@@ -96,12 +100,8 @@ class AddIncomeActivity : AppCompatActivity() {
         initView()
     }
 
-    private fun initView() {
-
-
-        TypeIE = intent.getStringExtra("Type").toString()
-
-
+    override fun onResume() {
+        super.onResume()
         val time = Calendar.getInstance()
         var hour = time.get(Calendar.HOUR)
         var minutes = time.get(Calendar.MINUTE)
@@ -118,8 +118,22 @@ class AddIncomeActivity : AppCompatActivity() {
             timeSet = "AM"
         }
         var times = hour.toString() + ":" + minutes.toString() + " " + timeSet
-
         binding.txtTime.setText(times)
+    }
+
+    private fun initView() {
+
+
+        MobileAds.initialize(this) {}
+
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
+        TypeIE = intent.getStringExtra("Type").toString()
+
+
+
         binding.txtAddIncomeTitle.setText("Add " + TypeIE)
         binding.entIncome.setText(TypeIE)
         binding.txtOther.text = ("Other " + TypeIE)
