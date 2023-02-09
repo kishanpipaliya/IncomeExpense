@@ -1,6 +1,7 @@
 package com.example.incomeexpense.activity
 
 import android.app.*
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
@@ -23,9 +24,9 @@ import com.example.incomeexpense.adapter.PaymentTypeAdapter
 import com.example.incomeexpense.database.IncomeExpenseDatabase
 import com.example.incomeexpense.databinding.ActivityAddIncomeBinding
 import com.example.incomeexpense.moelclass.PayListClass
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.*
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import java.util.*
 import kotlin.math.max
@@ -41,6 +42,7 @@ class AddIncomeActivity : AppCompatActivity() {
     private val channelId = "i.apps.notifications"
     private val description = "Test notification"
 
+    private var mInterstitialAd: InterstitialAd? = null
     lateinit var mAdView : AdView
     var maxLength = 9223372036854775807
 
@@ -97,7 +99,64 @@ class AddIncomeActivity : AppCompatActivity() {
         binding = ActivityAddIncomeBinding.inflate(layoutInflater)
         var view = binding.root
         setContentView(view)
+
+
         initView()
+
+    }
+
+    private fun adLoad() {
+        MobileAds.initialize(this) {}
+
+        //banner
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
+
+        //InterstitialAd
+        var adRequestIn = AdRequest.Builder().build()
+
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequestIn, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                Log.e(TAG, ""+adError.toString())
+                mInterstitialAd = null
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                Log.e(TAG, "Ad was loaded."+interstitialAd.toString())
+                mInterstitialAd = interstitialAd
+            }
+        })
+
+        mInterstitialAd?.fullScreenContentCallback = object: FullScreenContentCallback() {
+            override fun onAdClicked() {
+                // Called when a click is recorded for an ad.
+                Log.d(TAG, "Ad was clicked.")
+            }
+
+            override fun onAdDismissedFullScreenContent() {
+                // Called when ad is dismissed.
+                Log.d(TAG, "Ad dismissed fullscreen content.")
+                mInterstitialAd = null
+            }
+
+            override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                // Called when ad fails to show.
+                Log.e(TAG, "Ad failed to show fullscreen content.")
+                mInterstitialAd = null
+            }
+
+            override fun onAdImpression() {
+                // Called when an impression is recorded for an ad.
+                Log.d(TAG, "Ad recorded an impression.")
+            }
+
+            override fun onAdShowedFullScreenContent() {
+                // Called when ad is shown.
+                Log.d(TAG, "Ad showed fullscreen content.")
+            }
+        }
     }
 
     override fun onResume() {
@@ -122,13 +181,7 @@ class AddIncomeActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-
-
-        MobileAds.initialize(this) {}
-
-        mAdView = findViewById(R.id.adView)
-        val adRequest = AdRequest.Builder().build()
-        mAdView.loadAd(adRequest)
+        adLoad()
 
         TypeIE = intent.getStringExtra("Type").toString()
 
@@ -172,8 +225,7 @@ class AddIncomeActivity : AppCompatActivity() {
 
 
         binding.btnSave.setOnClickListener {
-            var income = java.lang.Long.valueOf(binding.edtIncome.text.toString())
-            Log.e("===============", "initView: $income" )
+
             var other = binding.txtOther.text.toString()
             var method = binding.txtPayment.text.toString()
             var note = binding.edtNotes.text.toString()
@@ -181,17 +233,22 @@ class AddIncomeActivity : AppCompatActivity() {
             var time = binding.txtTime.text.toString()
 
 
-
             binding.entIncome.filters += InputFilter.LengthFilter(maxLength.toInt())
 
             if (binding.edtIncome.text.isEmpty()) {
                 binding.edtIncome.setError("Enter Income")
-            }
-            else if (other.isEmpty()) {
+            } else if (other.isEmpty()) {
                 binding.txtOther.setError("Enter Category")
             } else if (method.isEmpty()) {
                 binding.txtPayment.setError("Enter Method")
             } else {
+                var income = java.lang.Long.valueOf(binding.edtIncome.text.toString())
+                if (mInterstitialAd != null) {
+                    mInterstitialAd?.show(this)
+                } else {
+                    Log.d("TAG", "The interstitial ad wasn't ready yet.")
+                }
+
                 var type = 1
                 if (TypeIE.equals("Income")) {
                     type = 1
@@ -205,7 +262,11 @@ class AddIncomeActivity : AppCompatActivity() {
                 notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
                 val intent = Intent(this, MainActivity::class.java)
                 val pendingIntent =
-                    PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                        PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_MUTABLE)
+                    } else {
+                        TODO("VERSION.SDK_INT < S")
+                    }
                 // RemoteViews are used to use the content of
                 // some different layout apart from the current activity layout
 //                val contentView = RemoteViews(packageName, R.layout.activity_after_notification)
@@ -250,7 +311,6 @@ class AddIncomeActivity : AppCompatActivity() {
                         .setContentIntent(pendingIntent)
                 }
                 notificationManager.notify(1234, builder.build())
-                finish()
             }
         }
 

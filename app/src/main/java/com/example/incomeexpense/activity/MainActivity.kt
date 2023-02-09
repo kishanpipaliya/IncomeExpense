@@ -1,9 +1,11 @@
 package com.example.incomeexpense.activity
 
 import android.app.AlertDialog
+import android.content.ContentValues
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.widget.ListView
@@ -13,9 +15,9 @@ import com.example.incomeexpense.R
 import com.example.incomeexpense.adapter.MoreOptionAdapter
 import com.example.incomeexpense.database.IncomeExpenseDatabase
 import com.example.incomeexpense.databinding.ActivityMainBinding
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.*
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 
@@ -25,6 +27,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     lateinit var RcvList: ListView
     lateinit var mAdView : AdView
+
+    private var mInterstitialAd: InterstitialAd? = null
 
 
     var moreImage = arrayOf(
@@ -56,8 +60,28 @@ class MainActivity : AppCompatActivity() {
         var view = binding.root
         setContentView(view)
 
+        adLoad()
         initView()
+
     }
+
+    private fun adLoad() {
+        //InterstitialAd
+        var adRequestIn = AdRequest.Builder().build()
+
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequestIn, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                Log.e(ContentValues.TAG, ""+adError.toString())
+                mInterstitialAd = null
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                Log.e(ContentValues.TAG, "Ad was loaded."+interstitialAd.toString())
+                mInterstitialAd = interstitialAd
+            }
+        })
+    }
+
 
     override fun onResume() {
         super.onResume()
@@ -97,6 +121,35 @@ class MainActivity : AppCompatActivity() {
         mAdView = findViewById(R.id.adView)
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
+
+        mInterstitialAd?.fullScreenContentCallback = object: FullScreenContentCallback() {
+            override fun onAdClicked() {
+                // Called when a click is recorded for an ad.
+                Log.d(ContentValues.TAG, "Ad was clicked.")
+            }
+
+            override fun onAdDismissedFullScreenContent() {
+                // Called when ad is dismissed.
+                Log.d(ContentValues.TAG, "Ad dismissed fullscreen content.")
+                mInterstitialAd = null
+            }
+
+            override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                // Called when ad fails to show.
+                Log.e(ContentValues.TAG, "Ad failed to show fullscreen content.")
+                mInterstitialAd = null
+            }
+
+            override fun onAdImpression() {
+                // Called when an impression is recorded for an ad.
+                Log.d(ContentValues.TAG, "Ad recorded an impression.")
+            }
+
+            override fun onAdShowedFullScreenContent() {
+                // Called when ad is shown.
+                Log.d(ContentValues.TAG, "Ad showed fullscreen content.")
+            }
+        }
 
         val versionName = packageManager.getPackageInfo(packageName, 0).versionName
         val versionCode = packageManager.getPackageInfo(packageName, 0).versionCode
@@ -152,7 +205,7 @@ class MainActivity : AppCompatActivity() {
             bottomSheetDialog.setContentView(R.layout.more_option_view)
 
 
-            RcvList = bottomSheetDialog.findViewById<ListView>(R.id.RcvList)!!
+            RcvList = bottomSheetDialog.findViewById(R.id.RcvList)!!
 
             LayoutInflater.from(this).inflate(R.layout.more_option, null)
             var MoreOptionAdapter = MoreOptionAdapter(this, moreImage, moreImageName)
@@ -167,6 +220,13 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, AddIncomeActivity::class.java)
             intent.putExtra("Type", "Income")
             startActivity(intent)
+            if (mInterstitialAd != null) {
+                mInterstitialAd?.show(this)
+                adLoad()
+            } else {
+                Log.d("TAG", "The interstitial ad wasn't ready yet.")
+            }
+
         }
         binding.btnAddExpense.setOnClickListener {
             var intent = Intent(this, AddIncomeActivity::class.java)
